@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: sans-serif;
+  color: #eee;
+  box-sizing: content-box;
+  transition: background 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+body {
+  background: #353535;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: #ccc;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  padding: 0.1em;
+  background:#656565;
+  box-shadow: 0 1px 2px black;
+}
+
+#header .container {
+}
+
+#header p {
+  color: #ddd;
+  font-weight: bold;
+  text-align: center;
+}
+
+#header ul {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+#header li {
+  list-style: none;
+}
+
+#header li:not(:first-child) {
+  padding-left: 1em;
+}
+
+#profile_icon {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#profile_icon img {
+  width: 128pt;
+  border-radius: 100%;
+  border: solid black 3pt;
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+#profile_icon img:hover {
+  transform: rotateZ(180deg);
+}
+
+.container {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.m1 {
+  margin-top: 1em;
+}
+
+.m3 {
+  margin-top: 3em;
+}
+
+.center {
+  text-align: center;
+}
+
+.card_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card_container .card {
+  flex-grow: 1;
+  width: 250px;
+  background: #454545;
+  padding: 1em;
+  margin: 8px;
+  border-radius: 5pt;
+  box-shadow: 0 1px 2px black;
+  text-align: center;
+}
+
+.card_container .card:hover {
+  background: #656565;
+}
+
+.card_container .card .title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.card_container .card .caption {
+  margin-top: 0.5em;
+  text-align: left;
+}
+
+.card_container .card img {
+  width: 128px;
+  border-radius: 5pt;
+}
+
+.card_container .android_server_list img {
+  /* background: darkorange; */
+}
+
+.card_container .mods_database img {
+  background: black;
+}
+
+.alpha {
+  margin-top: 0.5em;
+  color: #fe0;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.under_development {
+  margin-top: 0.5em;
+  color: #222;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1rem;
+}
