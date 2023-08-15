@@ -1,0 +1,14 @@
+doctype html
+html[lang="en"]
+  head
+    meta[charset="utf-8"]
+    meta[content="IE=edge" http-equiv="X-UA-Compatible"]
+    meta[content="width=device-width, initial-scale=1.0" name="viewport"]
+    meta[name="generator" content="Nanoc <%= Nanoc::VERSION %>"]
+
+    link[rel="stylesheet" href="/stylesheet.css"]
+
+    title #{@item[:title]} | Cyberarm's W3D Hub Projects
+  body
+    .container
+      == yield
