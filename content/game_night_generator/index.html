@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>W3D Hub Game Night Banner Generator</title>
+  <link href="/game_night_generator/css/application.css" rel="stylesheet" />
+  <script src="/game_night_generator/js/application.js"></script>
+</head>
+
+<body>
+  <div class="container m3 flex-row flex-mobile-column height-full box-shadowify">
+    <div class="flex-grow" id="image_preview"></div>
+    <div class="flex-column height-full" id="menu">
+      <h1 class="center">W3D Hub Game Night Banner Generator</h1>
+      <div class="flex-row m1"><label class="width-50" for="template">Template</label><select choose="APB"
+          class="flex-grow" id="template" name="template">
+          <option value="APB">APB</option>
+          <option value="AR">AR</option>
+          <option value="BFD">BFD</option>
+          <option value="CWC">CWC</option>
+          <option value="ECW">ECW</option>
+          <option value="IA">IA</option>
+          <option value="TSR">TSR</option>
+          <option value="REN">REN</option>
+        </select></div>
+      <div class="flex-row m1"><label class="width-50" for="color">Text Color</label><input class="flex-grow" id="color"
+          name="color" type="color" value="#ffffff" /></div>
+      <div class="flex-row m1"><label class="width-50" for="outline_color">Text Outline Color</label><input
+          class="flex-grow" id="outline_color" name="outline_color" type="color" value="#aaaaaa" /></div>
+      <div class="flex-row m1"><label class="width-50" for="date">GMT Date</label><input class="flex-grow" id="date"
+          name="date" type="date" /></div>
+      <div class="flex-row m1"><label class="width-50" for="time">GMT Time</label><input class="flex-grow" id="time"
+          name="time" type="time" /></div>
+      <div class="flex-row m1"><label class="width-50" for="backdrop">Backdrop</label><input accept="image/*"
+          class="flex-grow" id="backdrop" name="backdrop" type="file" /></div>
+      <div class="flex-grow"></div><a class="save-button m3" id="save">Save</a>
+    </div>
+  </div>
+</body>
+
+</html>
