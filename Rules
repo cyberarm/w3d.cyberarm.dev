@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+compile '/**/502.html' do
+  write item.identifier.to_s
+end
+
 compile '/**/*.html' do
   layout '/default.*'
 
