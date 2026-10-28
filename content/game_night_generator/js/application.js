@@ -37,6 +37,7 @@ W3DHub.GameNightGenerator = class {
     this.date_element = document.querySelector("#date");
     this.time_element = document.querySelector("#time");
     this.backdrop_element = document.querySelector("#backdrop");
+    this.prefab_backdrop_element = document.querySelector("#prefab_backdrop");
 
     this.save_element = document.querySelector("#save");
 
@@ -90,16 +91,24 @@ W3DHub.GameNightGenerator = class {
     this.backdrop_element.addEventListener("change", function () {
       context.backdrop_image.src = context.to_data_url(context.backdrop_element.files[0]);
     });
+
+    this.prefab_backdrop_element.addEventListener("change", function (e) {
+      let value = e.target.value;
+
+      if (value === "")
+      {
+        if (context.backdrop_element.files.length > 0)
+        {
+          context.backdrop_image.src = context.to_data_url(context.backdrop_element.files[0]);
+        }
+      } else {
+        context.backdrop_image.src = context.url(`/media/backdrops/${value}.webp`);
+      }
+    });
   }
 
   url(path) {
-    let protocol = window.location.protocol;
-
-    if (protocol.startsWith("https")) {
-      return "/game_night_generator" + path;
-    }
-
-    return path;
+    return "/game_night_generator" + path;
   }
 
   to_data_url(file) {

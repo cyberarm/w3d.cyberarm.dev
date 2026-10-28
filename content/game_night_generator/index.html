@@ -1,44 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>W3D Hub Game Night Banner Generator</title>
+    <link href="/game_night_generator/css/application.css" rel="stylesheet" />
+    <script src="/game_night_generator/js/application.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>W3D Hub Game Night Banner Generator</title>
-  <link href="/game_night_generator/css/application.css" rel="stylesheet" />
-  <script src="/game_night_generator/js/application.js"></script>
-</head>
-
-<body>
-  <div class="container m3 flex-row flex-mobile-column height-full box-shadowify">
-    <div class="flex-grow" id="image_preview"></div>
-    <div class="flex-column height-full" id="menu">
-      <h1 class="center">W3D Hub Game Night Banner Generator</h1>
-      <div class="flex-row m1"><label class="width-50" for="template">Template</label><select choose="APB"
-          class="flex-grow" id="template" name="template">
-          <option value="APB">APB</option>
-          <option value="AR">AR</option>
-          <option value="BFD">BFD</option>
-          <option value="CWC">CWC</option>
-          <option value="ECW">ECW</option>
-          <option value="IA">IA</option>
-          <option value="TSR">TSR</option>
-          <option value="REN">REN</option>
-        </select></div>
-      <div class="flex-row m1"><label class="width-50" for="color">Text Color</label><input class="flex-grow" id="color"
-          name="color" type="color" value="#ffffff" /></div>
-      <div class="flex-row m1"><label class="width-50" for="outline_color">Text Outline Color</label><input
-          class="flex-grow" id="outline_color" name="outline_color" type="color" value="#aaaaaa" /></div>
-      <div class="flex-row m1"><label class="width-50" for="date">GMT Date</label><input class="flex-grow" id="date"
-          name="date" type="date" /></div>
-      <div class="flex-row m1"><label class="width-50" for="time">GMT Time</label><input class="flex-grow" id="time"
-          name="time" type="time" /></div>
-      <div class="flex-row m1"><label class="width-50" for="backdrop">Backdrop</label><input accept="image/*"
-          class="flex-grow" id="backdrop" name="backdrop" type="file" /></div>
-      <div class="flex-grow"></div><a class="save-button m3" id="save">Save</a>
+  <body>
+    <div
+      class="container m3 flex-row flex-mobile-column height-full box-shadowify"
+    >
+      <div class="flex-grow" id="image_preview"></div>
+      <div class="flex-column height-full" id="menu">
+        <h1 class="center">W3D Hub Game Night Banner Generator</h1>
+        <div class="flex-row m1">
+          <label class="width-50" for="template">Template</label
+          ><select choose="APB" class="flex-grow" id="template" name="template">
+            <option value="APB">APB - A Path Beyond</option>
+            <option value="AR">AR - Apocalypse Rising</option>
+            <option value="BFD">BFD - Battle for Dune</option>
+            <option value="CWC">CWC - Cold War Confrontation</option>
+            <option value="ECW">ECW - Expansive Civilian Warfare</option>
+            <option value="GZ">GZ - Ground Zero</option>
+            <option value="IA">IA - Interim Apex</option>
+            <option value="TSR">TSR - Tiberian Sun: Reborn</option>
+            <option value="REN">REN - Renegade</option>
+          </select>
+        </div>
+        <div class="flex-row m1">
+          <label class="width-50" for="color">Text Color</label
+          ><input
+            class="flex-grow"
+            id="color"
+            name="color"
+            type="color"
+            value="#ffffff"
+          />
+        </div>
+        <div class="flex-row m1">
+          <label class="width-50" for="outline_color">Text Outline Color</label
+          ><input
+            class="flex-grow"
+            id="outline_color"
+            name="outline_color"
+            type="color"
+            value="#aaaaaa"
+          />
+        </div>
+        <div class="flex-row m1">
+          <label class="width-50" for="date">GMT Date</label
+          ><input class="flex-grow" id="date" name="date" type="date" />
+        </div>
+        <div class="flex-row m1">
+          <label class="width-50" for="time">GMT Time</label
+          ><input class="flex-grow" id="time" name="time" type="time" />
+        </div>
+        <div class="flex-row m1">
+          <label class="width-50" for="backdrop">Backdrop</label
+          ><input
+            accept="image/*"
+            class="flex-grow"
+            id="backdrop"
+            name="backdrop"
+            type="file"
+          />
+        </div>
+        <div class="flex-row m1">
+          <label class="width-50" for="prefab_backdrop">Prefab Backdrop</label
+          ><select class="flex-grow" id="prefab_backdrop" name="prefab_backdrop">
+            <option value="">--none--</option>
+            <hr/>
+            <optgroup label="A Path Beyond">
+              <option value="apb_banner">APB Mammoth and Longbow</option>
+              <option value="apb_background">APB Map</option>
+              <option value="apb_thief">APB Sneaky Thief</option>
+              <option value="apb_allied_cruiser">APB Cruiser</option>
+              <option value="apb_missile_submarine">APB Missile Submarine</option>
+            </optgroup>
+            <hr/>
+            <optgroup label="Apocalypse Rising">
+              <option value="ar_banner">AR - Prism Tanks</option>
+              <option value="ar_allied_ore_miner">AR - Allied Ore Miner</option>
+              <option value="ar_doggo">AR - Office Doggo</option>
+              <option value="ar_gi">AR - Dune Patrol GIs</option>
+              <option value="ar_kirovs">AR - Fort Bradley Kirovs</option>
+              <option value="ar_soviet_war_factory">AR - Soviet War Factory</option>
+            </optgroup>
+            <hr/>
+            <optgroup label="Battle for Dune">
+              <option value="woa_banner">BFD - Move to Point B</option>
+              <option value="woa_background">BFD - Rock Textures</option>
+            </optgroup>
+            <hr/>
+            <optgroup label="Cold Ware Confrontation">
+              <option value="cwc_banner">CWC - banner</option>
+            </optgroup>
+            <hr/>
+            <optgroup label="Expansive Civilian Warfare">
+              <option value="ecw_banner">ECW - Fountain</option>
+              <option value="ecw_cabin">ECW - Cabin</option>
+              <option value="ecw_city">ECW - City</option>
+              <option value="ecw_city2">ECW - City2</option>
+              <option value="ecw_sunset">ECW - Sunset</option>
+            </optgroup>
+            <hr/>
+            <optgroup label="Ground Zero">
+              <option value="gz_banner">GZ - Hand of Nod</option>
+            </optgroup>
+            <hr/>
+            <optgroup label="Interim Apex">
+              <option value="ia_banner">IA - Bradley</option>
+              <option value="ia_assault">IA - Assault</option>
+              <option value="ia_crane">IA - Crane</option>
+              <option value="ia_ezekiel">IA - Ezekiel</option>
+              <option value="ia_power_plant">IA - Power Plant</option>
+              <option value="ia_radio_tower">IA - Radio Tower</option>
+              <option value="ia_ships">IA - Ships</option>
+            </optgroup>
+            <hr/>
+            <optgroup label="Reborn">
+              <option value="tsr_banner">TSR - Ambient Green Titan</option>
+              <option value="tsr_banshee">TSR - Banshee</option>
+              <option value="tsr_mammoth_mk2">TSR - Mammoth MKII</option>
+              <option value="tsr_orca">TSR - Orca</option>
+              <option value="tsr_reaper">TSR - Reaper</option>
+              <option value="tsr_titan">TSR - Titan</option>
+            </optgroup>
+            <hr/>
+            <optgroup label="Renegade">
+              <option value="ren_banner">REN - Havoc infront of Mammoth</option>
+              <option value="ren_flamer_rush">REN - Flame Tank Rush</option>
+              <option value="ren_mesa">REN - Mesa Cave</option>
+              <option value="ren_mobius_patrol">REN - Mobius on Patrol</option>
+              <option value="ren_stank_rush">REN - Stealth Tank Rush</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="flex-grow"></div>
+        <a class="save-button m3" id="save">Save</a>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
