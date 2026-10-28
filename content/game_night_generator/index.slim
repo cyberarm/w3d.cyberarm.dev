@@ -17,6 +17,15 @@ html[lang="en"]
         h1.center
           | W3D Hub Game Night Banner Generator
         .flex-row.m1
+          label.width-50[for="orientation"]
+            | Orientation
+          select#orientation.flex-grow[choose="APB" name="orientation"]
+            option[value="landscape"]
+              | Landscape 16x9
+            option[value="landscape"]
+              | Portrait 3x4
+
+        .flex-row.m1
           label.width-50[for="template"]
             | Template
           select#template.flex-grow[choose="APB" name="template"]

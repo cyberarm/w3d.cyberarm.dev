@@ -23,6 +23,12 @@ W3DHub.GameNightGenerator = class {
   constructor() {
     let context = this;
 
+    let local_time = new Date();
+    let target_date = new Date(`${local_time.getFullYear()}-${local_time.getMonth() + 1}-${local_time.getDate()} 14:00:00 CDT`);
+    let target_time = `${context.zero_pad_time(target_date.getUTCHours())}:${context.zero_pad_time(target_date.getUTCSeconds())}`;
+
+    console.log(local_time, target_time, target_time);
+
     this.cards = {
       date: new W3DHub.Box(224.0, 424.0 + 36, 272.0, 216.0 - 36),
       server: new W3DHub.Box(504.0, 424.0 + 36, 272.0, 216.0 - 36),
@@ -36,6 +42,7 @@ W3DHub.GameNightGenerator = class {
     this.outline_color_element = document.querySelector("#outline_color");
     this.date_element = document.querySelector("#date");
     this.time_element = document.querySelector("#time");
+    this.time_element.value = target_time;
     this.backdrop_element = document.querySelector("#backdrop");
     this.prefab_backdrop_element = document.querySelector("#prefab_backdrop");
 
@@ -44,8 +51,8 @@ W3DHub.GameNightGenerator = class {
     this.image_container.innerHTML = "";
 
     this.canvas_element = document.createElement("canvas");
-    this.canvas_element.width = 1280;
-    this.canvas_element.height = 720;
+    this.canvas_element.width = 1280; // 2560
+    this.canvas_element.height = 720; // 1440
     this.canvas_element.style.width = "100%";
     this.canvas_element.style.height = null;
     this.canvas_element.style.display = "block";
@@ -105,6 +112,11 @@ W3DHub.GameNightGenerator = class {
         context.backdrop_image.src = context.url(`/media/backdrops/${value}.webp`);
       }
     });
+  }
+
+  // Why does this need to exist? :'(
+  zero_pad_time(numeric) {
+    return numeric <= 9 ? `0${numeric}` : `${numeric}`;
   }
 
   url(path) {
@@ -192,8 +204,8 @@ W3DHub.GameNightGenerator = class {
 
     // ----------------------------------------------
     // UPDATE SAVE BUTTON DATA
-    context.save_element.href = context.canvas_element.toDataURL("image/png");
-    context.save_element.download = context.template_element.value.toLowerCase() + "_game_night.png";
+    context.save_element.href = context.canvas_element.toDataURL("image/webp", 0.75);
+    context.save_element.download = context.template_element.value.toLowerCase() + "_game_night.webp";
   }
 
   hex_to_rgba(hex, alpha = 0.5) {
